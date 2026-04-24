@@ -103,7 +103,7 @@ const Playlists = async function (query, startIndex, limit) {
     const url = new URL("/Items", CONFIG.jellyfin.local);
 
     url.searchParams.append("fields", "Id,Name");
-    url.searchParams.append("includeItemTypes", "Playlist");
+    url.searchParams.append("includeItemTypes", "ManualPlaylistsFolder,Playlist");
 
     return await MakeAPIRequest(url, query, startIndex, limit);
 };
